@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Pagina Prodotto</title>
+  <script src="functions.js"></script>
+
+  <link rel="stylesheet" href="style_EC.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- questi sono per il font -->
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+	
+</head>
+<body>
+  <div id="prodotto"></div>
+  <script>
+    // Recupera i dati del prodotto dalla URL
+    var urlParams = new URLSearchParams(window.location.search);
+    var titolo = urlParams.get('titolo');
+    var prezzo = urlParams.get('prezzo');
+    var immagine = urlParams.get('immagine');
+    var titolo1=decodeURIComponent(titolo);
+    var prezzo1=decodeURIComponent(prezzo);
+    
+    // Aggiungi i dati del prodotto alla pagina
+    var prodottoDiv = document.getElementById('prodotto');
+    prodottoDiv.innerHTML = '<img src="' + immagine + '" alt="' + titolo + '">' +
+                            '<h1>' + titolo + '</h1>' +
+                            '<p>' + prezzo + '</p>'+
+                            '<button class="btn" id="'+titolo+'" onclick="aggiungiProdotto(\''+titolo1+'\',\''+prezzo1+'\')"> Aggiungi al carrello </button>'+
+                            '<button class="btn" id="car" onclick="vaiAlCarrello()">Carrello</button>';
+  </script>
+</body>
+</html>
