@@ -1,0 +1,229 @@
+*{
+    margin: 0;				/* questi parametri verranno applicati per gli elementi esterni*/
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{							/* font del testo */
+	font-family: 'Orbitron', sans-serif;
+}
+
+.navbar{         /* .navbar perchè mi riferisco al nome della classe div chiamata così sull html */
+	display: flex; 
+	align-items: center;
+	padding: 20px;       /* con questi parametri ho spostato l'elenco del menù alla destra del logo */
+}
+
+nav{					/* dovrebbe spostare sul lato destro l'elenco del nav, ma al momento non funziona */
+	flex: 10;			/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+	/*text-align: right;*/
+}
+
+nav ul{
+	display: inline-block;
+	list-style-type: none; /* ho levato i puntini davanti l'elenco */
+	
+}
+
+nav ul li{
+	display: inline-block; /* metto in "riga" le varie voci del nav */  
+	margin-right: 55px;
+	
+}
+
+
+a{
+	text-decoration: none; /* levo la sottolineatura dalle voci nav */
+	color: #555;
+}
+p{				/*noto che setto al paragrafo lo stesso colore delle voci nav */
+	color: #555;
+}
+
+.container{             /*parametri vari per la visualizzazione della classe "container" */
+	max-width: 1300px;	 
+	margin: auto;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+
+
+.row{					/* ridimensiono l'immagine nella classe row */
+	display: flex;
+	align-items:  center;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+.col-2{
+	flex-basis: 50%;	
+	min-width: 300px;
+
+}
+.col-2 img{
+	max-width: 85%;
+	padding: 50px 0;
+	margin-top: -10px;
+}
+
+.col-2 h1{				/*modifico stile dell'h1*/
+	font-size: 30px;
+	line-height:30px;
+	margin: 25px 0;
+	
+}
+
+.btn{					/* costruisco il bottne "scopri di più */
+	display: inline-block;
+	background: #FFBF00 /*#CDCD00*/;
+	color: #fff;
+	padding: 8px 30px;
+	margin: 30px 0;
+	border-radius: 30px;    /* rende il bottone "stondato" */
+	transition: background 0.7s; /* tempo cambiamento colore */
+	border:#fff;
+}
+.btn:hover{
+	background: #D3D3D3; /* colore bottone quando ci si passa sopra il mouse */
+}
+
+
+
+.header{				/*colore sfondo*/
+	background: radial-gradient(#fff,#fff);
+}
+
+.header .row{			/* margine dall'alto */
+	margin-top: 70px;
+}
+
+.categories{
+	margin: -130px 0;   /* margine (spazio). Muovo in alto/basso la sezione nera centrale */
+	
+}
+.col-3{
+	flex-basis: 30%; /*così tutte le colonne occuperanno il 30% dello spazio */
+	min-width: 250px;
+	margin-bottom: 30px;
+}
+.col-3 img{
+	width: 100%;
+}
+
+.small-container{
+	max-width: 1080px;
+	margin: auto;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+.col-4{
+	flex-basis: 25%;
+	padding: 10px;
+	min-width:200px;
+	margin-bottom: 50px;
+	transition: transform 0.5s;
+}
+.col-4 img{
+	width: 100%;
+}
+
+.cont_categories{							/* sezione centrale nera, sfondo */
+	background: radial-gradient(#000,#000);
+}
+.cont_categories h1{
+	color:#fff;
+}
+
+.title{						/* impostazioni titolo "prodotti in evidenza" */
+	text-align: left;     /* questo come al solito non funziona, dovrebbe spostare il testo al centro */
+	margin: 0 auto 80px;
+	position: relative;
+	line-height: 60px;
+	color: #555;
+}
+ 
+.title::after{           /* sottolineatura "articoli in evidenza" */
+	content: '';
+	background: #FFBF00;
+	width: 280px;
+	height: 5px;
+	border-radius: 5px;
+	position: absolute;
+	bottom: 0;
+	left: 0%;
+	transform: tranlatex(-50%);
+}
+
+h4{						/* stile nome articoli */
+	font-weight: normal;
+}
+
+.col-4 p{						/* stile prezzo articoli */
+	font-size: 14px;
+}
+
+.col-4:hover{
+	transform: translateY(-10px);
+}
+
+.offer{											/* colore sfondo ultima sezione store */
+	background: radial-gradient(#fff,#fff);
+	margin-top: 80px;
+	padding: 30px 0;
+}
+
+.col-2 .offer-img{
+	padding: 50px;
+}
+
+small{
+	color: #555;
+}
+
+/* LOGHI */
+
+.brands{
+	margin: 100px;
+}
+.col-5{
+	width: 160px;
+}
+.col-5 img{
+	width: 100%;
+	cursor: pointer;
+	/*color: grayscale(100%); */
+}
+
+
+/* Fascia Finale */
+
+.footer{
+	background: #000;
+	color: #8a8a8a;
+	font-size: 14px;
+	padding: 60px 0 20px;
+}
+.footer p{
+	color: #8a8a8a;
+}
+.footer h3{
+	color: #fff;
+	margin-bottom: 20px;
+}
+.footer-col-2{
+	width: 180px;
+	margin-bottom: 20px;
+}
+/*.footer-col-1, .footer-col-2, .footer-col-3, .footer-col-3{
+	min-width: 250px;
+	margin-bottom: 20px;
+}
+.footer-col-1{
+	flex-basis: 30%;
+	
+}
+.footer-col-2{
+	flex: 1;
+	text-align: center;
+}*/
