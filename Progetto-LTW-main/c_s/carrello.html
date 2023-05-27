@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="/main/functions.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARRELLO</title>
+
+    <link rel="stylesheet" href="/pay_bonus/postp.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- questi sono per il font -->
+	    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+</head>
+
+
+<body >
+  <script>
+    document.addEventListener('DOMContentLoaded', creaCarrello);
+  </script>
+<div class="container">
+    <a href="/main/html_EC.html"> <img  src="/images/loghi/logo.png" width="400px"></a>
+    <h1>CARRELLO</h1>
+    <div id="cart-items"></div>
+    <div>
+      <button class="btn" id="checkout" onclick="checkout()">Vai al Checkout</button>
+      <button class="btn" id="svuota" onclick="svuota_e()">Svuota Cestino</button>
+    </div>
+</div>
+
+
+
+
+
+</body>
+</html>

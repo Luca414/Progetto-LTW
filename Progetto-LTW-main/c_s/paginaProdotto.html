@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Pagina Prodotto</title>
+  <script src="/main/functions.js"></script>
+
+  <link rel="stylesheet" href="/pay_bonus/postp.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- questi sono per il font -->
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+	
+</head>
+<body>
+    
+  <div id="custom-alert" class="custom-alert">
+    <div class="custom-alert-content">
+      <h2></h2>
+      
+      <button class="btn" onclick="closeAlert()">Chiudi</button>
+    </div>
+  </div> 
+
+
+
+  <div id="prodotto"></div>
+  <style>
+    #prodotto img {
+      max-width: 400px; /* Imposta la larghezza massima dell'immagine a 500 pixel */
+    }
+  </style>
+  <script>
+    // Recupera i dati del prodotto dalla URL
+    var urlParams = new URLSearchParams(window.location.search);
+    var titolo = urlParams.get('titolo');
+    var prezzo = urlParams.get('prezzo');
+    var immagine = urlParams.get('immagine');
+    var store=urlParams.get('store');
+    if (store!=null&&store){
+      var prodottoDiv = document.getElementById('prodotto');
+        prodottoDiv.innerHTML =      '<img src="' + immagine + '" alt="' + titolo + '">' +
+                                '<h1>' + titolo + '</h1>' +
+                                '<p>' + prezzo + '</p>'+
+                                '<button class="btn" id="'+titolo+'" onclick="aggiungiProdotto(\''+titolo+'\',\''+prezzo+'\')"> Aggiungi al carrello </button>'+
+                                '<button class="btn" id="car" onclick="vaiAlCarrello()">Carrello</button>'+'<button class="btn" onclick="vaiAlloStore()">Torna allo Store</button>';
+
+    }
+    
+    
+    else{
+    // Aggiungi i dati del prodotto alla pagina
+        var prodottoDiv = document.getElementById('prodotto');
+        prodottoDiv.innerHTML =      '<img src="' + immagine + '" alt="' + titolo + '">' +
+                                '<h1>' + titolo + '</h1>' +
+                                '<p>' + prezzo + '</p>'+
+                                '<button class="btn" id="'+titolo+'" onclick="aggiungiProdotto(\''+titolo+'\',\''+prezzo+'\')"> Aggiungi al carrello </button>'+
+                                '<button class="btn" id="car" onclick="vaiAlCarrello()">Carrello</button>'+'<button class="btn" onclick="defaultLink()">Home</button>';
+
+    }            
+  </script>
+</body>
+</html>

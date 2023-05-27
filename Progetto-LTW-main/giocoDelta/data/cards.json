@@ -1,0 +1,29 @@
+[
+    {
+        "image": "/giocoDelta/assets/moschettone_2.png",
+        "name": "m2"
+    },
+    {
+        "image": "/giocoDelta/assets/moschettone_3.png",
+        "name": "m3"
+    },
+    {
+        "image": "/giocoDelta/assets/moschettone_41.png",
+        "name": "m4"
+    },
+    {
+        "image": "/giocoDelta/assets/scimmia_2.jpg",
+        "name": "scimmia"
+        
+    },
+    {
+        "image": "/giocoDelta/assets/scimmia_2.jpg",
+        "name": "scimmia"
+        
+    },
+    {
+        "image": "/giocoDelta/assets/scimmia_2.jpg",
+        "name": "scimmia"
+        
+    }
+]

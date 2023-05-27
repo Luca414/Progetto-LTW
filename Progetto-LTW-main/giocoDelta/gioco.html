@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Memory Card Game</title>	
+	
+    
+	
+	<link rel="stylesheet" href="styleGioco.css">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com"> <!-- questi sono per il font -->
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+	
+  </head>
+  
+  
+  
+  
+  
+  
+  <body>
+
+    <div id="custom-alert" class="custom-alert">                <!-- Questo è per l'alert personalizzato -->
+      <div class="custom-alert-content">
+        <h2></h2>
+        
+        <button class="btn" onclick="closeAlert()">Chiudi</button>
+      </div>
+    </div> 
+
+
+    <h1>SCOVA L'ACCESSORIO PER VINCERLO</h1>
+    <h3>..pss occhio a non farti fregare dalle scimmie!</h3>
+    <div class="grid-container">
+    </div>
+    <p>Crediti Disponibili <span class="score"></span></p>
+    <div class="actions">
+        <button class="btn" onclick="restart()">Restart</button> 
+      <div class="spacer"></div>
+        <button class="btn" onclick="defaultLink()">Torna alla home</button>
+    </div>
+    <script src="funGioco.js"></script>
+  </body>
+</html>
