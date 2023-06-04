@@ -1,0 +1,149 @@
+body{							/* font del testo */
+	font-family: 'Orbitron', sans-serif;
+
+} 
+
+
+.header{				/*colore sfondo*/
+	background: radial-gradient(#fff,#fff);
+}
+
+
+
+
+.navbar{         /* .navbar perchè mi riferisco al nome della classe div chiamata così sull html */
+	display: flex; 
+	align-items: center;
+	padding: 20px;       /* con questi parametri ho spostato l'elenco del menù alla destra del logo */
+}
+nav{					/* dovrebbe spostare sul lato destro l'elenco del nav, ma al momento non funziona */
+	flex: 10;			/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+	text-align: right;
+}
+nav ul{
+	display: inline-block;
+	list-style-type: none; /* ho levato i puntini davanti l'elenco */
+}
+nav ul li{
+	display: inline-block; /* metto in "riga" le varie voci del nav */  
+	margin-right: 55px;   /* distanza tra le voci del nav*/
+}
+a{
+	text-decoration: none; /* levo la sottolineatura dalle voci nav */
+	color: #555;
+}
+
+
+
+
+.container{             /*parametri vari per la visualizzazione della classe "container" */
+	max-width: 100%;	 
+	margin: auto;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+.title{						/* impostazioni titolo "prodotti in evidenza" */
+	/*text-aling: center;     questo come al solito non funziona, dovrebbe spostare il testo al centro */
+	margin: 0 auto 80px;    /* non so */
+	position: relative;	  
+	/*line height: 60px;   non so */
+	color: #555;
+}
+ 
+.title::after{           /* sottolineatura "articoli in evidenza" */
+	content: '';
+	background: #FFBF00;
+	width: 150px;
+	height: 5px;
+	border-radius: 5px;
+	position: absolute;
+	bottom: 0;
+	left: 0%;
+	transform: tranlatex(-50%);
+}
+
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 300px 300px 300px 300px; /* definisce tre righe di altezza 100px ciascuna */
+}
+
+.item {
+  background-color: #fff;
+  padding: 20px;
+}
+
+
+
+.small-container{
+	max-width: 1050px;
+	margin: auto;	
+	padding-left: 25px;
+	padding-right: 25px;
+	/*text-allign: center;*/
+} 
+
+
+
+.row {
+  display: flex;
+  flex-wrap: wrap;           /* lui mi crea/gestisce le colonne e la struttura delle foto dei prodotti */
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.col-4{                        /* grandezza immagini prodotti */
+	display: inline-block;
+	width: calc(25% - 20px);
+	flex-basis: 25%;
+	padding: 10px;
+	min-width:200px;
+	margin-bottom: 50px;
+	transition: transform 0.5s;
+	margin: 5px;
+	cursor: pointer;
+}
+
+.col-4 img{
+	width: 100%;
+	transition: all 0.3s ease-in-out;
+}
+
+.col-4 img:hover {
+  transform: scale(1.1); /* ingrandisci leggermente l'immagine quando il mouse passa sopra di essa */
+}
+
+
+
+
+/* ------------------------------------------ SEZIONE FINALE --------------------------------------*/
+
+.footer{
+	background: #000;
+	color: #8a8a8a;
+	font-size: 14px;
+	padding: 60px 0 20px;
+	border: none;
+	width: 100%;
+}
+.footer p{
+	color: #8a8a8a;
+}
+.footer h3{
+	color: #fff;
+	margin-bottom: 20px;
+}
+.footer-col-2{
+	width: 180px;
+	margin-bottom: 20px;
+}
+
+
+.menu-icon{
+	width: 45px;
+	height: 45px;
+	
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Memory Card Game</title>	
+	
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styleGioco.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"> 
+  <link rel="stylesheet" href="bootstrap\css\bootstrap.min.css" >  <!-- link per classi bootstrap -->
+
+
+	<link rel="preconnect" href="https://fonts.googleapis.com"> <!-- questi sono per il font -->
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+	
+  </head>
+  
+  
+  
+  
+  
+  
+  <body>
+
+    <div id="custom-alert" class="custom-alert">                <!-- Questo è per l'alert personalizzato -->
+      <div class="custom-alert-content">
+        <h2></h2>
+        
+        <button class="btn" onclick="closeAlert()">Chiudi</button>
+      </div>
+    </div> 
+
+
+    <h1>SCOVA L'ACCESSORIO PER VINCERLO</h1>
+    <h3>..pss occhio a non farti fregare dalle scimmie!</h3>
+    <div class="grid-container" >
+      
+    </div>
+    <p>
+      <i class="bi bi-coin"></i>
+      Crediti Disponibili:
+      <span class="score"></span></p>
+    <div class="actions">
+        <button class="btn" onclick="restart()">Restart</button> 
+      <div class="spacer"></div>
+        <button class="btn" onclick="defaultLink()">Torna alla home</button>
+    </div>
+    <script src="funGioco.js"></script>
+  </body>
+</html>

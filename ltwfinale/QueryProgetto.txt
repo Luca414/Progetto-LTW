@@ -1,0 +1,63 @@
+- CREATE TABLE utente (
+    nome varchar(20),
+    cognome varchar(20),
+    email varchar(50) PRIMARY KEY,
+    password varchar(60),
+    amici integer DEFAULT 0,
+    bonus integer DEFAULT 0,
+    saldo integer DEFAULT 0
+  );
+
+
+
+
+
+- CREATE OR REPLACE FUNCTION controllamici()
+    RETURNS TRIGGER
+    LANGUAGE plpgsql
+  AS $$
+  BEGIN
+    IF NEW.amici = 5 THEN
+        NEW.amici := 0;
+        NEW.bonus := NEW.bonus + 1;
+    END IF;
+
+    RETURN NEW;
+  END;
+  $$;
+
+
+
+- CREATE TRIGGER controlloamici
+    BEFORE UPDATE ON utente
+    FOR EACH ROW
+    WHEN (OLD.amici <> NEW.amici)
+    EXECUTE FUNCTION controllamici();
+
+
+
+- CREATE OR REPLACE FUNCTION public.aggiorna_bonus()
+    RETURNS trigger
+    LANGUAGE 'plpgsql'
+   AS $$
+   BEGIN
+    IF NEW.saldo > 100 AND NEW.saldo > OLD.saldo THEN
+        LOOP
+            NEW.saldo := NEW.saldo - 100;
+            NEW.bonus := NEW.bonus + 1;
+            EXIT WHEN NEW.saldo <= 100;
+        END LOOP;
+        UPDATE utente SET saldo = NEW.saldo, bonus = NEW.bonus WHERE email = NEW.email;
+    END IF;
+    RETURN NEW;
+END;
+$$;
+
+
+
+- CREATE TRIGGER trigger_aggiorna_bonus
+    AFTER UPDATE OF saldo
+    ON public.utente
+    FOR EACH ROW
+    WHEN (new.saldo > old.saldo)
+    EXECUTE FUNCTION public.aggiorna_bonus();

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <!--<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css"/>-->
+        <link rel="stylesheet" href="/login/signin.css"/>
+
+        
+        <script src="/main/functions.js"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- questi sono per il font -->
+	    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+        
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <!-- funzione js che usa jquery e fa i il controllo-->
+        <script>
+            $(document).ready(function() {
+            $('form[name="myForm"]').submit(function(e) {
+                var emailInput = $('input[name="inputEmail"]').val();
+                var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                var password=$('input[name="inputPassword"]').val();
+                if(emailInput.trim()===""||password.trim()===""){
+                    e.preventDefault();
+                    showAlert("Compila i campi obbligatori!");
+                }
+                else if (!emailRegex.test(emailInput)) {
+                            e.preventDefault();
+                            showAlert("Inserisci un indirizzo email valido!");
+                
+                }
+             });
+            });
+
+        </script>
+
+    </head>
+
+
+
+
+
+
+
+    <body onload="controllaErrori()">
+        <div id="custom-alert" class="custom-alert">
+            <div class="custom-alert-content">
+              <h2></h2>
+              
+              <button class="btn" onclick="closeAlert()">Chiudi</button>
+            </div>
+        </div> 
+        <div class="container">
+
+            <div class="d-flex flex-column justify-content-center align-items-center text-center" >
+
+                <a href="/main/html_EC.html"> <img  src="/images/loghi/logo.png" width="400px"></a>
+                <h1>Effettua il login</h1>
+
+                <form action="login.php" method="POST" name="myForm" > 
+
+                    <div class="campi_testo">
+
+                        <input  name="inputEmail" class="form-control" 
+                        placeholder="indirizzo email"  /> <br><br>
+
+                        <input type="password" name="inputPassword" class="form-control" 
+                        placeholder="Password" /> <br><br>
+
+                        
+                        
+                        <button class="btn" type="submit">ACCEDI</button>
+
+
+                    </div>
+                    
+
+                
+                </form>
+
+            </div>
+
+        </div>
+
+
+
+
+    </body>
+
+
+
+
+
+
+
+</html>
